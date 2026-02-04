@@ -1,5 +1,10 @@
 package basic.c04_conditionals;
 
+/*
+ * Ejercicios para condicionales (04/02/2026)
+ *
+ */
+
 public class ConditionalsExercises {
     public static void main(String[] args) {
         // 1. Establece la edad de un usuario y muestra si puede votar (mayor o igual a 18).
@@ -78,16 +83,47 @@ public class ConditionalsExercises {
         }
         // 7. Simula un sistema de notas: muestra "Sobresaliente", "Aprobado" o "Suspenso" según la nota (0-100).
         int note = 100;
-        if (note < 70 ){
+        if (note < 70) {
             System.out.println("Suspenso");
-        }else if (note == 100){
+        } else if (note == 100) {
             System.out.println("Sobresaliente");
-        }else
+        } else
             System.out.println("Aprobado");
+
         // 8. Escribe un programa que determine si puedes entrar al cine: debes tener al menos 15 años o ir acompañado.
+        int entryAge = 10;
+        boolean isAlone = true; // ¿Está solo?: sí == !si? : no
 
+        if (entryAge >= 15) {
+            System.out.println("Puedes entrar al cine");
+        } else if (entryAge < 15 && isAlone == !true) {
+            System.out.println("Puedes entrar al cine, vienes acompañado");
+        } else
+            System.out.println("No puedes entrar, necesitas un acompañante");
         // 9. Crea un programa que diga si una letra es vocal o consonante.
-
-        // 10. Usa tres variables a, b, c y muestra cuál es el mayor de las tres.
+        String content = "estudiar";
+        if (content.isEmpty()) {
+            System.out.println("No existe texto a evaluar");
+        } else {
+            char letter = content.toLowerCase().charAt(0);
+            System.out.println(content);
+            System.out.println(letter);
+            switch (letter) {
+                case 'a', 'e', 'i', 'o', 'u' -> System.out.println("Es vocal.");
+                default -> {
+                    if (!Character.isLetter(letter)) {
+                        System.out.println("El dato no es una letra.");
+                    } else
+                        System.out.println("Es consonante.");
+                }
+            }
+        }
+        // 10. Usa tres variables a, b, c, y muestra cuál es el mayor de las tres.
+        int a, b, c;
+        a = 10;
+        b = 60;
+        c = 3;
+        int major = Math.max(a, Math.max(b, c));
+        System.out.println(major);
     }
 }
