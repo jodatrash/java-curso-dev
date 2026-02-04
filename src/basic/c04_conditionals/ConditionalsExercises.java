@@ -1,5 +1,10 @@
 package basic.c04_conditionals;
 
+/*
+ * Ejercicios para condicionales (04/02/2026)
+ *
+ */
+
 public class ConditionalsExercises {
     public static void main(String[] args) {
         // 1. Establece la edad de un usuario y muestra si puede votar (mayor o igual a 18).
