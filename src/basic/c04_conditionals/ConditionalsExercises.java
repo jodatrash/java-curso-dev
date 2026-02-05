@@ -91,15 +91,17 @@ public class ConditionalsExercises {
             System.out.println("Aprobado");
 
         // 8. Escribe un programa que determine si puedes entrar al cine: debes tener al menos 15 años o ir acompañado.
-        int entryAge = 10;
-        boolean isAlone = true; // ¿Está solo?: sí == !si? : no
+        int entryAge = 14;
+        boolean isAlone = false; // ¿Está solo?: sí == !si? : no
 
+        // Evalúa 15 años o acompañado:
         if (entryAge >= 15) {
-            System.out.println("Puedes entrar al cine");
-        } else if (entryAge < 15 && isAlone == !true) {
-            System.out.println("Puedes entrar al cine, vienes acompañado");
+            System.out.println(" - Puedes entrar al cine");
+        } else if (!isAlone) {
+            System.out.println(" - Puedes entrar al cine, vienes acompañado");
         } else
-            System.out.println("No puedes entrar, necesitas un acompañante");
+            System.out.println(" - No puedes entrar, necesitas un acompañante");
+
         // 9. Crea un programa que diga si una letra es vocal o consonante.
         String content = "estudiar";
         if (content.isEmpty()) {
