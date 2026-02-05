@@ -7,6 +7,8 @@ package basic.c05_structures;
  * Una especie de tabla de datos y con cada uno de los valores asociados a esa clave, es como
  * se puede acceder.
  *
+ *
+ * Hash no admite repetidos.
  */
 
 import java.util.HashMap;
@@ -43,5 +45,54 @@ public class Maps {
         // Intentando entrar a una clave mal escrita.
         System.out.println(names.get("username")); // null - recordando que se debe respetar mayúsculas y minúsculas.
 
+        // Verificar elementos.
+        /*
+         * Verificar correctamente si existe "dev", no de obtener el valor, sino de comprobar que exista cada uno
+         * de las keys
+         *
+         * Recordar que es case sensitive.
+         */
+
+        // Existe la clave.
+        System.out.println(names.containsKey("Username")); // true
+        System.out.println(names.containsKey("dev")); // false
+
+        // Existe el valor.
+        System.out.println(names.containsValue("Jonathan")); // true
+        System.out.println(names.containsValue("Juan")); // false
+
+        // Eliminar elemento.
+
+        /*
+         * Elimina la clave y registro, pero también imprime que se tenía asociado a la clave
+         */
+        System.out.println(names.remove("Username")); // Eliminar directamente por clave.
+        System.out.println(names);
+
+
+        // Modificar elementos.
+        names.put("Nombre", "Jonathan"); // Original
+        System.out.println(names);
+
+        /*
+         * Si hacemos el put a una clave que ya existe, lo que se hace es modificar en realidad es reemplazar
+         * el valor que se tiene inicialmente
+         */
+
+        names.put("Nombre", "Maximiliano"); // Actualización / reemplazo y si no existe lo crea desde 0
+        System.out.println(names);
+
+        names.replace("Nombre", "Nathan"); // Reemplaza el valor solo si existe.
+        System.out.println(names);
+
+        names.putIfAbsent("dev", "Juan"); // Insertalo solo si no existe.
+        System.out.println(names);
+
+        System.out.println(names.isEmpty()); // false
+        System.out.println(names.values()); // Devuelve solo un listado de valores.
+
+        // Limpiar HashMap
+        names.clear();
+        System.out.println(names);
     }
 }
