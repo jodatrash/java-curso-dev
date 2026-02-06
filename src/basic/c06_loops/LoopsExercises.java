@@ -101,7 +101,7 @@ public class LoopsExercises {
         for (int i = 1; i <= numero; i++) {
             fact *= i;
         }
-        System.out.println("El factorial de " + numero + " ,es: " + fact);
+        System.out.println("El factorial de " + numero + ", es: " + fact);
 
     }
 }
