@@ -14,13 +14,14 @@ public class FunctionsExercises {
         subtraction(5, 3);
 
         // 4. Crea un método que calcule el cuadrado de un número (n * n).
-        sqrtCalc(5);
+        System.out.println(sqrtCalc(5));
 
         // 5. Escribe una función que reciba un número y diga si es par o impar.
-        pairOrNot(441);
+        System.out.println("Es par: " + isEven(40));
+        //pairOrNot(441);
 
         // 6. Crea un método que reciba una edad y retorne true si es mayor de edad (y false en caso contrario).
-        boolean result = isAdult(47);
+        boolean result = isAdult(18);
         System.out.println("Es mayor de edad: " + result);
 
         // 7. Implementa una función que reciba una cadena y retorne su longitud.
@@ -55,22 +56,26 @@ public class FunctionsExercises {
         System.out.println("El resultado de la resta es: " + (numberOne - numberTwo));
     }
 
-    public static void sqrtCalc(int numberOne) {
-        System.out.println(Math.sqrt(numberOne));
+    public static double sqrtCalc(int numberOne) {
+        //System.out.println(Math.sqrt(numberOne));
+        return Math.sqrt(numberOne);
     }
 
+    public static boolean isEven(int numberOne) {
+        return numberOne % 2 == 0;
+    }
+
+    /*
     public static void pairOrNot(int numberOne) {
         if (numberOne % 2 == 0) {
             System.out.println("Es par");
         } else
             System.out.println("No es par");
     }
+    */
 
     public static boolean isAdult(int age) {
-        if (age >= 18) {
-            return true;
-        }
-        return false;
+        return age >= 18;
     }
 
     public static int lengthChain(String text) {
