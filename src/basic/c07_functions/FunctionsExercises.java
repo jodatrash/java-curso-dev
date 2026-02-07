@@ -14,7 +14,7 @@ public class FunctionsExercises {
         subtraction(5, 3);
 
         // 4. Crea un método que calcule el cuadrado de un número (n * n).
-        System.out.println(sqrtCalc(5));
+        System.out.println(calculateSquare(15));
 
         // 5. Escribe una función que reciba un número y diga si es par o impar.
         System.out.println("Es par: " + isEven(40));
@@ -56,10 +56,16 @@ public class FunctionsExercises {
         System.out.println("El resultado de la resta es: " + (numberOne - numberTwo));
     }
 
-    public static double sqrtCalc(int numberOne) {
-        //System.out.println(Math.sqrt(numberOne));
-        return Math.sqrt(numberOne);
+    public static double calculateSquare(int numberOne) {
+        return (numberOne * numberOne);
     }
+
+    /*
+     * Calcula la raíz cuadrada de un número.
+     * public static double sqrtCalc(int numberOne) {
+     *     return Math.sqrt(numberOne);
+     * }
+     */
 
     public static boolean isEven(int numberOne) {
         return numberOne % 2 == 0;
