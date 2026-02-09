@@ -24,22 +24,51 @@ public class Person {
      */
 
     // Atributos.
-    String name;
+    private String name;
     int age;
+    final private String id; // Eliminamos la posibilidad de poder editar "id";
 
     // Constructor.
     /*
      * Con esto obligamos al usuario a meter el nombre de la persona y la edad.
      */
-    public Person(String name, int age) {
+    public Person(String name, int age, String id) {
         this.name = name;
-        this.age = age;
+        this.setAge(age);
+        this.id = id;
     }
 
     // Métodos.
     public void greetings() {
-        System.out.println("Hola, soy " + name + " y tengo " + age + " años.");
+        System.out.println("Hola, soy " + name + " y tengo " + age + " años. " + id);
     }
 
+    // Crear método auxiliar para acceder al valor.
+    // Tenemos la oportunidad de acceder al id, pero no de modificarlo.
+    // Getter.
+    public String getId() {
+        return id;
+    }
+
+    // Con los setter nos permite establecer un criterio, para este caso establecer la edad.
+    // Setter
+    /*
+     * Caso de uso:
+     * No se requiere que el usuario ingrese números en negativos.
+     */
+    // Creando un getter para poder obtener la edad sin exponer el atributo age.
+
+    public int getAge() {
+        return age;
+    }
+
+    public int setAge(int age) {
+        if (age > 0) {
+            this.age = age;
+        } else {
+            System.out.println("Edad no valida!");
+        }
+        return age;
+    }
 
 }
