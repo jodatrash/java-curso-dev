@@ -14,19 +14,19 @@ public class Temperature {
     }
 
     public double getCelsius() {
-        if (celsius > 100 || celsius < -100) {
-            System.out.println("No se puede mostrar la temperatura.");
-        } else {
-            System.out.println("La temperatura es: " + celsius + "°");
-        }
         return celsius;
     }
 
     public void setCelsius(double celsius) {
-        if (celsius < -100 || celsius > 100) {
+        if (celsius >= -100 && celsius <= 100) {
+            this.celsius = celsius;
+        } else {
             System.out.println("Solo se aceptan temperaturas en un rango de -100° a 100° Celsius.");
         }
-        this.celsius = celsius;
+    }
+
+    public void displayTemperature() {
+        System.out.println("La temperatura es: " + celsius + "°");
     }
 }
 
