@@ -27,7 +27,12 @@ public class AccessModifiersExercises {
         Temperature temperature = new Temperature(0);
         temperature.setCelsius(10);
         temperature.getCelsius();
+
         // 6. Crea una clase User con los atributos privados username y password. Implementa los métodos setUsername(String username), setPassword(String password) y checkPassword(String inputPassword) que compare contraseñas.
+        User user = new User("","");
+        user.setUsername("Jodatrash");
+        user.setPassword("password0012");
+        user.checkPassword("password0012");
 
         // 7. Crea una clase Employee con el atributo privado salary. Agrega el método raiseSalary(double percent) que solo permita aumentos positivos.
 
