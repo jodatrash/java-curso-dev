@@ -20,6 +20,8 @@ public class AccessModifiersExercises {
         System.out.println("Balance: $" + bankAccount.getBalance());
 
         // 4. Crea una clase Book con el atributo privado title. Permite leerlo con el método getTitle() pero no modificarlo (sin setTitle()). El título debe asignarse solo por el constructor.
+        Book book = new Book("El principito");
+        System.out.println("El titulo del libro es: " + book.getTitle());
 
         // 5. Crea una clase Temperature con el atributo privado celsius. El método setCelsius(double celsius) solo debe aceptar valores entre -100 y 100.
 
