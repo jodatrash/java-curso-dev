@@ -40,11 +40,27 @@ public class AccessModifiersExercises {
         user.checkPassword("password0012");
 
         // 7. Crea una clase Employee con el atributo privado salary. Agrega el método raiseSalary(double percent) que solo permita aumentos positivos.
+        Employee employee = new Employee(1000); // Salario base
+        employee.raiseSalary(10);
+        System.out.println(employee.getSalary()); // 1100
+        employee.raiseSalary(5);
+        System.out.println(employee.getSalary()); // 1155
 
         // 8. Crea una clase Rectangle con los atributos privados width y height. Agrega setters y el método calculateArea() que devuelva el resultado de width * height.
+        Rectangle rectangle = new Rectangle(10, 10);
+        System.out.println("El area es: " + rectangle.calculateArea());
 
         // 9. Crea una clase Student con el atributo privado grade. Agrega los métodos setGrade(int grade) y isPassed() que retorne true si la nota es mayor o igual a 60.
-
+        Student student = new Student(0);
+        student.setGrade(50);
+        student.displayStatus();
         // 10. Crea una clase Car con el atributo privado speed. Agrega los métodos accelerate(int amount) que aumente la velocidad (máximo 120) y brake(int amount) que reduzca la velocidad (mínimo 0).
+        Car car = new Car(0);
+        car.accelerate(80);
+        System.out.println(car.getSpeed());
+        car.brake(60);
+        System.out.println(car.getSpeed());
+
+
     }
 }
