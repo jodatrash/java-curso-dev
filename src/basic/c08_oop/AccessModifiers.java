@@ -21,6 +21,8 @@ public class AccessModifiers {
          * getters & setters.
          * Diferentes métodos / funciones, que se crean para poder permitir el acceso a la variable en cuestión.
          *
+         * getter = siempre retornan valor, nunca se trabaja la lógica
+         * setter = Pueden realizar lógica, validar, realizar logs, limpieza de datos, etc.
          *
          * Clases de ejemplos:
          * Classes.java
