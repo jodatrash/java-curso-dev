@@ -1,7 +1,5 @@
 package basic.c08_oop.InheritanceExercises.ex_08;
 
-import basic.c08_oop.InheritanceExercises.Account;
-
 public class SavingsAccount extends Account {
     private double interestRate;
 
