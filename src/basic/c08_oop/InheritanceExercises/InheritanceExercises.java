@@ -5,6 +5,8 @@ import basic.c08_oop.InheritanceExercises.ex_02.Student;
 import basic.c08_oop.InheritanceExercises.ex_03.Cat;
 import basic.c08_oop.InheritanceExercises.ex_03.Dog;
 import basic.c08_oop.InheritanceExercises.ex_04.Manager;
+import basic.c08_oop.InheritanceExercises.ex_05.Circle;
+import basic.c08_oop.InheritanceExercises.ex_05.Rectangle;
 
 public class InheritanceExercises {
     public static void main(String[] args) {
@@ -28,6 +30,11 @@ public class InheritanceExercises {
         manager.displayInfo();
 
         // 5. Crea una clase abstracta Shape con un método calculateArea(). Luego implementa ese método en Circle y Rectangle.
+        var rectangle = new Rectangle(5, 5);
+        var circle = new Circle(5);
+        circle.displayData();
+        rectangle.displayData();
+
 
         // 6. Crea una clase Bird con el método fly(). Luego crea Eagle que sobrescriba fly() pero también llame al método original con super.fly().
 
