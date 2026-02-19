@@ -7,6 +7,9 @@ import basic.c08_oop.InheritanceExercises.ex_03.Dog;
 import basic.c08_oop.InheritanceExercises.ex_04.Manager;
 import basic.c08_oop.InheritanceExercises.ex_05.Circle;
 import basic.c08_oop.InheritanceExercises.ex_05.Rectangle;
+import basic.c08_oop.InheritanceExercises.ex_06.Eagle;
+import basic.c08_oop.InheritanceExercises.ex_07.Phone;
+import basic.c08_oop.InheritanceExercises.ex_08.SavingsAccount;
 
 public class InheritanceExercises {
     public static void main(String[] args) {
@@ -37,10 +40,23 @@ public class InheritanceExercises {
 
 
         // 6. Crea una clase Bird con el método fly(). Luego crea Eagle que sobrescriba fly() pero también llame al método original con super.fly().
+        var eagle = new Eagle();
+        eagle.fly();
 
         // 7. Haz una clase Device con un constructor que imprima “Device created”. Luego crea Phone que herede de Device y en su constructor imprima “Phone ready”.
+        Phone phone = new Phone();
 
         // 8. Account tiene un saldo y métodos para deposit() y withdraw(). SavingsAccount hereda y agrega un método addInterest().
+        SavingsAccount savingsAccount = new SavingsAccount(1000, 0.05);
+        savingsAccount.deposit(500);
+        savingsAccount.displayBalance();
+
+        savingsAccount.withdraw(200);
+        savingsAccount.displayBalance();
+
+        savingsAccount.addInterest();
+        savingsAccount.displayBalance();
+
 
         // 9. Crea una clase Vehicle y tres subclases: Car, Bike y Truck, cada una con un método describe() sobrescrito.
 
