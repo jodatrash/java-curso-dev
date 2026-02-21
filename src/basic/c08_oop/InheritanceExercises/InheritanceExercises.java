@@ -10,6 +10,12 @@ import basic.c08_oop.InheritanceExercises.ex_05.Rectangle;
 import basic.c08_oop.InheritanceExercises.ex_06.Eagle;
 import basic.c08_oop.InheritanceExercises.ex_07.Phone;
 import basic.c08_oop.InheritanceExercises.ex_08.SavingsAccount;
+import basic.c08_oop.InheritanceExercises.ex_09.Bike;
+import basic.c08_oop.InheritanceExercises.ex_09.Truck;
+import basic.c08_oop.InheritanceExercises.ex_10.Animal;
+import basic.c08_oop.InheritanceExercises.ex_10.Bird;
+
+import java.util.ArrayList;
 
 public class InheritanceExercises {
     public static void main(String[] args) {
@@ -59,7 +65,23 @@ public class InheritanceExercises {
 
 
         // 9. Crea una clase Vehicle y tres subclases: Car, Bike y Truck, cada una con un método describe() sobrescrito.
+        basic.c08_oop.InheritanceExercises.ex_09.Car car_ex09 = new basic.c08_oop.InheritanceExercises.ex_09.Car();
+        Bike bike = new Bike();
+        Truck truck = new Truck();
+
+        car_ex09.describe();
+        bike.describe();
+        truck.describe();
+
 
         // 10. Crea un ArrayList<Animal> que contenga instancias de Dog, Cat y Bird. Recorre la lista y llama a makeSound().
+        ArrayList<Animal> animals = new ArrayList<>();
+        animals.add(new basic.c08_oop.InheritanceExercises.ex_10.Dog());
+        animals.add(new basic.c08_oop.InheritanceExercises.ex_10.Cat());
+        animals.add(new Bird());
+
+        for (Animal sounds : animals) {
+            sounds.makeSound();
+        }
     }
 }
