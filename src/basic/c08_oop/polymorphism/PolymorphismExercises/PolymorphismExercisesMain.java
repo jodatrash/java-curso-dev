@@ -15,6 +15,14 @@ import basic.c08_oop.polymorphism.PolymorphismExercises.ex_06.Notification;
 import basic.c08_oop.polymorphism.PolymorphismExercises.ex_06.SMSNotification;
 import basic.c08_oop.polymorphism.PolymorphismExercises.ex_07.Animals;
 import basic.c08_oop.polymorphism.PolymorphismExercises.ex_07.Horse;
+import basic.c08_oop.polymorphism.PolymorphismExercises.ex_08.Converter;
+import basic.c08_oop.polymorphism.PolymorphismExercises.ex_09.Book;
+import basic.c08_oop.polymorphism.PolymorphismExercises.ex_09.Electronic;
+import basic.c08_oop.polymorphism.PolymorphismExercises.ex_09.Product;
+import basic.c08_oop.polymorphism.PolymorphismExercises.ex_10.Archer;
+import basic.c08_oop.polymorphism.PolymorphismExercises.ex_10.Character;
+import basic.c08_oop.polymorphism.PolymorphismExercises.ex_10.Mage;
+import basic.c08_oop.polymorphism.PolymorphismExercises.ex_10.Warrior;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -109,11 +117,46 @@ public class PolymorphismExercisesMain {
         showAnimalType(new basic.c08_oop.polymorphism.PolymorphismExercises.ex_07.Dog());
         showAnimalType(new Horse());
 
-        // 8. Crea una clase Converter con métodos convert(int), convert(double), y convert(String) que devuelvan diferentes formatos de texto.
+        /*
+         * 8. Crea una clase Converter con
+         * métodos convert(int), convert(double), y convert(String) que
+         * devuelvan diferentes formatos de texto.
+         */
 
-        // 9. Crea una clase Product con el método getPrice(). Luego, Book y Electronic deben sobrescribirlo con su propia lógica de descuento. Recorre una lista de Product e imprime el precio final de cada uno.
+        var converter = new Converter();
+        System.out.println(converter.convert(10));
+        System.out.println(converter.convert(12.0));
+        System.out.println(converter.convert("Hola"));
 
-        // 10. Crea una clase Character con método attack(). Luego crea subclases Warrior, Archer, Mage con ataques diferentes. En main, crea un array de Character y llama a attack() para cada uno.
+        /*
+         * 9. Crea una clase Product con el método getPrice().
+         * Luego, Book y Electronic deben sobrescribirlo con su propia lógica de descuento.
+         * Recorre una lista de Product e imprime el precio final de cada uno.
+         */
+
+        List<Product> items = new ArrayList<>();
+        items.add(new Book("El principito", 100));
+        items.add(new Electronic("iPad", 500));
+        items.add(new Product("Genérico", 15.00));
+
+        for (Product i : items) {
+            System.out.println(i.getName() + " $" + i.getPrice());
+        }
+
+        /*
+         * 10. Crea una clase Character con método attack().
+         * Luego crea subclases Warrior, Archer, Mage con ataques diferentes.
+         * En main, crea un array de Character y llama a attack() para cada uno.
+         * */
+
+        Character[] pnj = {
+                new Warrior("Guerrero"),
+                new Mage("Mago"),
+                new Archer("Arquero")
+        };
+        for (Character e : pnj) {
+            e.attack();
+        }
     }
 
     public static void endNotification(Notification n) {
