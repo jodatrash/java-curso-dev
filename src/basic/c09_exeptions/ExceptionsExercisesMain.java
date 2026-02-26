@@ -18,7 +18,16 @@ public class ExceptionsExercisesMain {
         }
 
         // 2. Crea un array de 3 elementos e intenta acceder al índice 5. Captura el ArrayIndexOutOfBoundsException.
-
+        String[] arr = {
+                "elemento 0",
+                "elemento 1",
+                "elemento 2",
+        };
+        try {
+            System.out.printf(arr[5]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.printf("No puedes acceder: " + e.getMessage());
+        }
         // 3. Crea una variable String nula e intenta imprimir su longitud. Maneja el NullPointerException.
 
         // 4. Escribe una función que transforma texto a número. Usa try-catch para manejar entradas no válidas (NumberFormatException).
