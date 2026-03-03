@@ -24,13 +24,27 @@ public class ExceptionsExercisesMain {
                 "elemento 2",
         };
         try {
-            System.out.printf(arr[5]);
+            System.out.println(arr[5]);
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.printf("No puedes acceder: " + e.getMessage());
+            System.out.println("No puedes acceder: " + e.getMessage());
         }
-        // 3. Crea una variable String nula e intenta imprimir su longitud. Maneja el NullPointerException.
 
+        // 3. Crea una variable String nula e intenta imprimir su longitud. Maneja el NullPointerException.
+        String name = null;
+        try {
+            int value = name.length();
+            System.out.println(value);
+        } catch (NullPointerException e) {
+            System.out.println("[ERROR] : " + e.getMessage());
+        }
         // 4. Escribe una función que transforma texto a número. Usa try-catch para manejar entradas no válidas (NumberFormatException).
+        String text = "123a";
+        try {
+            int number = converterToNumber(text);
+            System.out.println("Número convertido a: " + number);
+        } catch (NumberFormatException e) {
+            System.out.println("Error entrada invalida: " + e.getMessage());
+        }
 
         // 5. Escribe un programa con un bloque finally que se ejecute siempre, haya o no error.
         try {
@@ -52,6 +66,10 @@ public class ExceptionsExercisesMain {
         // 9. Crea una función checkPassword(String pass) que lance una excepción si la contraseña es demasiado corta.
 
         // 10. Implementa una clase LoginSystem que use una excepción personalizada LoginFailedException si el usuario o contraseña son incorrectos.
+    }
+
+    public static int converterToNumber(String text) {
+        return Integer.parseInt(text);
     }
 
     public static class ValidatorNum {
