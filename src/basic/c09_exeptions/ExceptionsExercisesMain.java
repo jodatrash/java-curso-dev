@@ -1,6 +1,8 @@
 package basic.c09_exeptions;
 
 import basic.c09_exeptions.ex_01.Division;
+import basic.c09_exeptions.ex_07.TemperatureChecker;
+import basic.c09_exeptions.ex_07.exceptions.CustomExceptionTemperature;
 
 public class ExceptionsExercisesMain {
     public static void main(String[] args) {
@@ -60,7 +62,12 @@ public class ExceptionsExercisesMain {
         var validate = new ValidatorNum();
         validate.numberValidate(-10);
         // 7. Crea una clase TemperatureChecker que lanza una excepción personalizada si la temperatura es menor a -50 o mayor a 50.
-
+        var temperatureChecker = new TemperatureChecker();
+        try {
+            temperatureChecker.checkTemperature(-110);
+        } catch (CustomExceptionTemperature e) {
+            System.out.println("[ERROR] Revisando la temperatura: " + e.getMessage());
+        }
         // 8. Crea un programa con varios bloques catch: uno para ArithmeticException, otro para ArrayIndexOutOfBoundsException.
 
         // 9. Crea una función checkPassword(String pass) que lance una excepción si la contraseña es demasiado corta.
