@@ -68,7 +68,23 @@ public class ExceptionsExercisesMain {
         */
 
         // 8. Crea un programa con varios bloques catch: uno para ArithmeticException, otro para ArrayIndexOutOfBoundsException.
+        int[] jugadoresPorServidor = {10, 0, 25, 5};
+        int tareasTotales = 100;
 
+        try {
+            int indiceServidor = 5;
+            System.out.println("Buscando servidor en el índice " + indiceServidor + "...");
+            int jugadores = jugadoresPorServidor[indiceServidor];
+            System.out.println("Servidor encontrado con " + jugadores + " jugadores. Calculando carga...");
+            int cargaPorJugador = tareasTotales / jugadores;
+            System.out.println("Éxito: Cada jugador recibirá " + cargaPorJugador + " tareas.");
+        } catch (ArithmeticException e) {
+            System.out.println("Error Matemático: El servidor no tiene jugadores activos (División por cero).");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error de Búsqueda: No existe un servidor en ese índice.");
+        } catch (Exception e) {
+            System.out.println("Error inesperado del sistema: " + e.getMessage());
+        }
         // 9. Crea una función checkPassword(String pass) que lance una excepción si la contraseña es demasiado corta.
 
         // 10. Implementa una clase LoginSystem que use una excepción personalizada LoginFailedException si el usuario o contraseña son incorrectos.
