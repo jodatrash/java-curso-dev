@@ -86,7 +86,9 @@ public class ExceptionsExercisesMain {
             System.out.println("Error inesperado del sistema: " + e.getMessage());
         }
         // 9. Crea una función checkPassword(String pass) que lance una excepción si la contraseña es demasiado corta.
-
+        /*
+        Se crea ejercicio en paquete ex_09
+        */
         // 10. Implementa una clase LoginSystem que use una excepción personalizada LoginFailedException si el usuario o contraseña son incorrectos.
     }
 
