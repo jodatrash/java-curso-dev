@@ -1,6 +1,6 @@
-package basic.c09_exeptions.ex_08;
+package basic.c09_exeptions.ex_09;
 
-import basic.c09_exeptions.ex_08.exceptions.WeakPasswordException;
+import basic.c09_exeptions.ex_09.exceptions.WeakPasswordException;
 
 public class CheckPasswordMain {
     public static void main(String[] args) throws WeakPasswordException {
