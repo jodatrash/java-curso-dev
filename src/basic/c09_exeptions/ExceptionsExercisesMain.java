@@ -3,6 +3,8 @@ package basic.c09_exeptions;
 import basic.c09_exeptions.ex_01.Division;
 import basic.c09_exeptions.ex_07.TemperatureChecker;
 import basic.c09_exeptions.ex_07.exceptions.CustomExceptionTemperature;
+import basic.c09_exeptions.ex_10.LoginSystem;
+import basic.c09_exeptions.ex_10.exceptions.LoginFailedException;
 
 public class ExceptionsExercisesMain {
     public static void main(String[] args) {
@@ -90,6 +92,22 @@ public class ExceptionsExercisesMain {
         Se crea ejercicio en paquete ex_09
         */
         // 10. Implementa una clase LoginSystem que use una excepción personalizada LoginFailedException si el usuario o contraseña son incorrectos.
+        LoginSystem auth = new LoginSystem();
+
+        try {
+            auth.login("admin", "12345");
+            System.out.println("Cargando datos del usuario...");
+        } catch (LoginFailedException e) {
+            System.out.println("ERROR" + e.getMessage() + "\n");
+        }
+
+        try {
+            auth.login("admin", "supersecretpassword");
+            System.out.println("Cargando datos del usuario...\n");
+        } catch (LoginFailedException e) {
+            System.out.println("ERROR" + e.getMessage() + "\n");
+        }
+
     }
 
     public static int converterToNumber(String text) {
