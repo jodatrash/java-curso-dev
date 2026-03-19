@@ -9,7 +9,7 @@ public class LoginSystem {
     public void login(String username, String password) throws LoginFailedException {
         System.out.println("Intentando iniciar sesión para el usuario: '" + username + "'...");
         if (username.equals(validUsername) && password.equals(validPassword)) {
-            System.out.println("✅ ¡Login exitoso! Bienvenido al panel de control, " + username + ".");
+            System.out.println("¡Login exitoso! Bienvenido al panel de control, " + username + ".");
         } else {
             throw new LoginFailedException("Acceso denegado: Usuario o contraseña incorrectos.");
         }
