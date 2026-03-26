@@ -1,24 +1,14 @@
 package basic.pkm_oop.states;
 
-public class States {
-    public void psn() {
+public abstract class States {
+    abstract void psn();
 
-    }
+    abstract void par();
 
-    public void par() {
+    abstract void slp();
 
-    }
+    abstract void frz();
 
-    public void slp() {
-
-    }
-
-    public void frz() {
-
-    }
-
-    public void brn(){
-
-    }
+    abstract void brn();
 
 }
