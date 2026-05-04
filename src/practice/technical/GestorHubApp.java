@@ -1,5 +1,6 @@
 package practice.technical;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -18,7 +19,15 @@ public class GestorHubApp {
         try(Scanner userInput = new Scanner(System.in)){
             System.out.println("Ingresa el nombre del servidor spoke a conectar.");
             String option = userInput.nextLine();
-            System.out.println(nodos.get(option));
+
+            NodoSpoke nodoEncontrado = nodos.get(option);
+            if (nodoEncontrado == null){
+                throw new NodoNoEncontradoException(LocalDate.now() + " - El nodo: " + option + " no se encuentra.");
+            }else {
+                nodoEncontrado.inicializarTunel();
+            }
+        } catch (NodoNoEncontradoException e) {
+            System.out.println(e.getMessage());
         }
 
     }
