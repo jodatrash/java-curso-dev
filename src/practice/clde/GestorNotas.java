@@ -8,6 +8,7 @@ public class GestorNotas {
     private static final String SEPARATOR = "=".repeat(43);
     private static final char CLEAR_TERMINAL = ' ';
     private static final int MAX_BLANK_LINES = 100;
+    private static final int MAX_ATTEMPTS = 7;
 
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
@@ -94,7 +95,7 @@ public class GestorNotas {
                         System.out.println(CLEAR_TERMINAL);
                     }
 
-                    for (int attempt = 1; attempt <= 7; attempt++) {
+                    for (int attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
                         System.out.printf("Intento: #%d ¿Cuál crees que es?:", attempt);
                         int userInputNumber = userInput.nextInt();
                         if (userInputNumber == secretNumber) {
