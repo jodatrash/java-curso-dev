@@ -1,5 +1,6 @@
 package practice.clde;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class GestorNotas {
@@ -82,6 +83,30 @@ public class GestorNotas {
                     int limit = userInput.nextInt();
                     for (int i = 0; i <= limit; i++) {
                         System.out.printf("%d * %d = %d%n", number, i, number * i);
+                    }
+                    break;
+                case 3:
+                    Random random = new Random();
+                    int secretNumber = random.nextInt(100) + 1;
+
+                    for (int cls = 0; cls <= MAX_BLANK_LINES - 1; cls++) {
+                        System.out.println(CLEAR_TERMINAL);
+                    }
+
+                    for (int attempt = 1; attempt <= 7; attempt++) {
+                        System.out.printf("Intento: #%d ¿Cuál crees que es?:", attempt);
+                        int userInputNumber = userInput.nextInt();
+                        if (userInputNumber == secretNumber) {
+                            System.out.printf("¡FELICIDADES!, haz acertado al número: %d, a los %d intentos%n", secretNumber, attempt);
+                            break;
+                        } else if (secretNumber > userInputNumber) {
+                            System.out.println("El número secreto es mayor.");
+                        } else {
+                            System.out.println("El número secreto es menor.");
+                        }
+                        if (attempt == 7) {
+                            System.out.printf("Se te acabaron los intentos, el número era: %d%n", secretNumber);
+                        }
                     }
                     break;
                 case 0:
