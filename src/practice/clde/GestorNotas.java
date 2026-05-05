@@ -71,8 +71,18 @@ public class GestorNotas {
                         System.out.printf("Alumnos reprobados: %d%n", failed);
                         System.out.println(SEPARATOR);
                     }
-
-
+                    break;
+                case 2:
+                    for (int cls = 0; cls <= MAX_BLANK_LINES - 1; cls++) {
+                        System.out.println(CLEAR_TERMINAL);
+                    }
+                    System.out.print("Que tabla de multiplicar deseas ver: ");
+                    int number = userInput.nextInt();
+                    System.out.print("Hasta que limite desea multiplicar: ");
+                    int limit = userInput.nextInt();
+                    for (int i = 0; i <= limit; i++) {
+                        System.out.printf("%d * %d = %d%n", number, i, number * i);
+                    }
                     break;
                 case 0:
                     System.out.println("Saliendo del aplicativo.");
