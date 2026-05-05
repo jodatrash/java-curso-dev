@@ -88,6 +88,7 @@ public class GestorNotas {
                 case 3:
                     Random random = new Random();
                     int secretNumber = random.nextInt(100) + 1;
+                    boolean guess = false;
 
                     for (int cls = 0; cls <= MAX_BLANK_LINES - 1; cls++) {
                         System.out.println(CLEAR_TERMINAL);
@@ -98,13 +99,14 @@ public class GestorNotas {
                         int userInputNumber = userInput.nextInt();
                         if (userInputNumber == secretNumber) {
                             System.out.printf("¡FELICIDADES!, haz acertado al número: %d, a los %d intentos%n", secretNumber, attempt);
+                            guess = true;
                             break;
                         } else if (secretNumber > userInputNumber) {
                             System.out.println("El número secreto es mayor.");
                         } else {
                             System.out.println("El número secreto es menor.");
                         }
-                        if (attempt == 7) {
+                        if (!guess) {
                             System.out.printf("Se te acabaron los intentos, el número era: %d%n", secretNumber);
                         }
                     }
